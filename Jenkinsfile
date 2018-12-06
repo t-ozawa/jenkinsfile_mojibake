@@ -35,10 +35,14 @@ pipeline {
                 //slnファイルのパス
                 //"C:\\Users\\wosco43-user\\Desktop\\Hellohoge日本語検証\\ConsoleApp_Hellohog\\Hellohoge_日本語検証.sln"
                 
-                //1
+                //0 bilud
+                bat '"C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\Community\\MSBuild\\15.0\\Bin\\MSBuild.exe" C:\\Users\\wosco43-user\\Desktop\\Hellohoge日本語検証\\ConsoleApp_Hellohog\\Hellohoge_日本語検証.sln'
+                
+                //1 chcp &&
                 //bat 'chcp 65001 && "C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\Community\\MSBuild\\15.0\\Bin\\MSBuild.exe" C:\\Users\\wosco43-user\\Desktop\\Hellohoge日本語検証\\ConsoleApp_Hellohog\\Hellohoge_日本語検証.sln'
+                
                 //2
-                //chcp 932
+                //chcp 932<-sjis
                 /*
                 bat """
                 nkf -g C:\\Users\\wosco43-user\\Desktop\\Hellohoge日本語検証\\ConsoleApp_Hellohog\\Hellohoge_日本語検証.sln
