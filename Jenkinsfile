@@ -25,25 +25,23 @@ pipeline {
         stage('Stage2') {
             steps {
                 echo 'S2'
-                /*
-                //MSBuildでビルド
-                //bat '"C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\BuildTools\\MSBuild\\15.0\\Bin\\MSBuild.exe" C:\\Jenkins\\workspace\\DemoPipeline20181029\\ConsoleApp_Hellohoge\\ConsoleApp_Hellohoge.sln'
-                */
                 echo 'ビルド'
-                //MSBuildのファイルパス
-                //"C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\Community\\MSBuild\\15.0\\Bin\\MSBuild.exe"
-                //slnファイルのパス
-                //"C:\\Users\\wosco43-user\\Desktop\\Hellohoge日本語検証\\ConsoleApp_Hellohog\\Hellohoge_日本語検証.sln"
                 
                 //0 bilud
                 bat '"C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\Community\\MSBuild\\15.0\\Bin\\MSBuild.exe" C:\\Users\\wosco43-user\\Desktop\\Hellohoge日本語検証\\ConsoleApp_Hellohog\\Hellohoge_日本語検証.sln'
+                //memo chcp 932<-sjis,chcp 65001<-UTF-8
                 
-                //1 chcp &&
-                //bat 'chcp 65001 && "C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\Community\\MSBuild\\15.0\\Bin\\MSBuild.exe" C:\\Users\\wosco43-user\\Desktop\\Hellohoge日本語検証\\ConsoleApp_Hellohog\\Hellohoge_日本語検証.sln'
+                //3 chcp 65001
+                bat """
+                chcp 65001
+                '"C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\Community\\MSBuild\\15.0\\Bin\\MSBuild.exe" C:\\Users\\wosco43-user\\Desktop\\Hellohoge日本語検証\\ConsoleApp_Hellohog\\Hellohoge_日本語検証.sln'
+                """
                 
-                //2
-                //chcp 932<-sjis
                 /*
+                //2 chcp &&
+                bat 'chcp 65001 && "C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\Community\\MSBuild\\15.0\\Bin\\MSBuild.exe" C:\\Users\\wosco43-user\\Desktop\\Hellohoge日本語検証\\ConsoleApp_Hellohog\\Hellohoge_日本語検証.sln'
+                
+                //1 nkf
                 bat """
                 nkf -g C:\\Users\\wosco43-user\\Desktop\\Hellohoge日本語検証\\ConsoleApp_Hellohog\\Hellohoge_日本語検証.sln
                 '"C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\Community\\MSBuild\\15.0\\Bin\\MSBuild.exe" C:\\Users\\wosco43-user\\Desktop\\Hellohoge日本語検証\\ConsoleApp_Hellohog\\Hellohoge_日本語検証.sln'
