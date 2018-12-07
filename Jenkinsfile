@@ -40,11 +40,10 @@ pipeline {
                 /*
                 //実行したジョブのworkspaceがカレントディレクトリになっているので注意(Jenkins特有のScript実行時のみ)
                 //成果物の保存(これをしないとビルドされたもの(*.exe)が保存されない)
-                //archiveArtifacts artifacts: 'ConsoleApp_Hellohoge\\x64\\Debug\\**.exe', onlyIfSuccessful: true
+                archiveArtifacts artifacts: 'hogeaaa_file\\hoge日本語検証\\x64\\Debug\\**.exe', onlyIfSuccessful: true
                 //成果物ファイルの移動
                 //bat 'copy C:\\Jenkins\\workspace\\DemoPipeline20181029\\ConsoleApp_Hellohoge\\x64\\Debug\\ConsoleApp.exe  C:\\Jenkins\\workspace\\DemoPipeline20181029\\ConsoleApp_Hellohoge'
                 */
-                //成果物の保存
                 
             }
         }
