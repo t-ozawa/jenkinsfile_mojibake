@@ -6,18 +6,18 @@ pipeline {
         hoge = 'envhogedefault'
     }
     parameters {
-        string(name: 'strpara', defaultValue: 'strparadefault',description: 'à–¾')
+        string(name: 'strpara', defaultValue: 'strparadefault',description: 'èª¬æ˜')
     }
     stages {
         stage('Stage1') {
             steps {
                 echo 'S1'
-                //ƒVƒ“ƒOƒ‹ƒR[ƒe[ƒVƒ‡ƒ“‚Å‚Í•Ï”g‚¦‚È‚¢
+                //ã‚·ãƒ³ã‚°ãƒ«ã‚³ãƒ¼ãƒ†ãƒ¼ã‚·ãƒ§ãƒ³ã§ã¯å¤‰æ•°ä½¿ãˆãªã„
                 echo "strpara: ${strpara}"
                 echo "envhoge: ${hoge}"
                 bat "echo strpara: ${strpara}"
                 /*
-                //Git‚Åƒrƒ‹ƒh‘ÎÛ‚ğæ“¾EGitƒŠƒ|ƒWƒgƒŠ‚Ìw’è
+                //Gitã§ãƒ“ãƒ«ãƒ‰å¯¾è±¡ã‚’å–å¾—ãƒ»Gitãƒªãƒã‚¸ãƒˆãƒªã®æŒ‡å®š
                 //git url: 'git@github.com:t-ozawa/Hellohoge.git', branch: 'master' 
                 */
             }
@@ -25,12 +25,12 @@ pipeline {
         stage('Stage2') {
             steps {
                 echo 'S2'
-                echo 'ƒrƒ‹ƒh'
+                echo 'ãƒ“ãƒ«ãƒ‰'
 
                 //chcp 65001
                 bat """
                 chcp 65001
-                "C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\Community\\MSBuild\\15.0\\Bin\\MSBuild.exe" C:\\Users\\Administrator\\Desktop\\hoge“ú–{ŒêŒŸØ\\hoge“ú–{ŒêŒŸØ\\hoge“ú–{ŒêŒŸØ.sln
+                "C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\Community\\MSBuild\\15.0\\Bin\\MSBuild.exe" C:\\Users\\Administrator\\Desktop\\hogeæ—¥æœ¬èªæ¤œè¨¼\\hogeæ—¥æœ¬èªæ¤œè¨¼\\hogeæ—¥æœ¬èªæ¤œè¨¼.sln
                 """
             }
         }
@@ -38,13 +38,13 @@ pipeline {
             steps {
                 echo 'S3'
                 /*
-                //Às‚µ‚½ƒWƒ‡ƒu‚Ìworkspace‚ªƒJƒŒƒ“ƒgƒfƒBƒŒƒNƒgƒŠ‚É‚È‚Á‚Ä‚¢‚é‚Ì‚Å’ˆÓ(Jenkins“Á—L‚ÌScriptÀs‚Ì‚İ)
-                //¬‰Ê•¨‚Ì•Û‘¶(‚±‚ê‚ğ‚µ‚È‚¢‚Æƒrƒ‹ƒh‚³‚ê‚½‚à‚Ì(*.exe)‚ª•Û‘¶‚³‚ê‚È‚¢)
+                //å®Ÿè¡Œã—ãŸã‚¸ãƒ§ãƒ–ã®workspaceãŒã‚«ãƒ¬ãƒ³ãƒˆãƒ‡ã‚£ãƒ¬ã‚¯ãƒˆãƒªã«ãªã£ã¦ã„ã‚‹ã®ã§æ³¨æ„(Jenkinsç‰¹æœ‰ã®Scriptå®Ÿè¡Œæ™‚ã®ã¿)
+                //æˆæœç‰©ã®ä¿å­˜(ã“ã‚Œã‚’ã—ãªã„ã¨ãƒ“ãƒ«ãƒ‰ã•ã‚ŒãŸã‚‚ã®(*.exe)ãŒä¿å­˜ã•ã‚Œãªã„)
                 //archiveArtifacts artifacts: 'ConsoleApp_Hellohoge\\x64\\Debug\\**.exe', onlyIfSuccessful: true
-                //¬‰Ê•¨ƒtƒ@ƒCƒ‹‚ÌˆÚ“®
+                //æˆæœç‰©ãƒ•ã‚¡ã‚¤ãƒ«ã®ç§»å‹•
                 //bat 'copy C:\\Jenkins\\workspace\\DemoPipeline20181029\\ConsoleApp_Hellohoge\\x64\\Debug\\ConsoleApp.exe  C:\\Jenkins\\workspace\\DemoPipeline20181029\\ConsoleApp_Hellohoge'
                 */
-                //¬‰Ê•¨‚Ì•Û‘¶
+                //æˆæœç‰©ã®ä¿å­˜
                 
             }
         }
