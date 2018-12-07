@@ -26,28 +26,12 @@ pipeline {
             steps {
                 echo 'S2'
                 echo 'ビルド'
-                
-                //0 bilud
-                bat '"C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\Community\\MSBuild\\15.0\\Bin\\MSBuild.exe" C:\\Users\\wosco43-user\\Desktop\\Hellohoge日本語検証\\ConsoleApp_Hellohog\\Hellohoge_日本語検証.sln'
-                //memo chcp 932<-sjis,chcp 65001<-UTF-8
-                
-                //3 chcp 65001
+
+                //chcp 65001
                 bat """
                 chcp 65001
-                '"C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\Community\\MSBuild\\15.0\\Bin\\MSBuild.exe" C:\\Users\\wosco43-user\\Desktop\\Hellohoge日本語検証\\ConsoleApp_Hellohog\\Hellohoge_日本語検証.sln'
+                "C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\Community\\MSBuild\\15.0\\Bin\\MSBuild.exe" C:\\Users\\Administrator\\Desktop\\hoge日本語検証\\hoge日本語検証\\hoge日本語検証.sln
                 """
-                
-                /*
-                //2 chcp &&
-                bat 'chcp 65001 && "C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\Community\\MSBuild\\15.0\\Bin\\MSBuild.exe" C:\\Users\\wosco43-user\\Desktop\\Hellohoge日本語検証\\ConsoleApp_Hellohog\\Hellohoge_日本語検証.sln'
-                
-                //1 nkf
-                bat """
-                nkf -g C:\\Users\\wosco43-user\\Desktop\\Hellohoge日本語検証\\ConsoleApp_Hellohog\\Hellohoge_日本語検証.sln
-                '"C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\Community\\MSBuild\\15.0\\Bin\\MSBuild.exe" C:\\Users\\wosco43-user\\Desktop\\Hellohoge日本語検証\\ConsoleApp_Hellohog\\Hellohoge_日本語検証.sln'
-                """
-                */
-                
             }
         }
         stage('Stage3') {
