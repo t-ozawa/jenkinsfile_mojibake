@@ -15,11 +15,6 @@ pipeline {
                 //シングルコーテーションでは変数使えない
                 echo "strpara: ${strpara}"
                 echo "envhoge: ${hoge}"
-                bat "echo strpara: ${strpara}"
-                /*
-                //Gitでビルド対象を取得・Gitリポジトリの指定
-                //git url: 'git@github.com:t-ozawa/Hellohoge.git', branch: 'master' 
-                */
             }
         }
         stage('Stage2') {
